@@ -1,6 +1,8 @@
 import { useState } from "react";
 
-const CreateTodo = () => {
+const CreateTodo = (props) => {
+  const { todos, setTodos } = props;
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -17,6 +19,9 @@ const CreateTodo = () => {
         }),
       });
       const json = await result.json();
+      setTodos([...todos, json.data]);
+      setTitle("");
+      setDescription("");
     }
   }
 
