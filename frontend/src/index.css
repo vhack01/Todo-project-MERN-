@@ -22,6 +22,10 @@ body {
   /* border: 1px solid; */
   flex-direction: column;
 }
+.main__container > div,
+section {
+  margin-top: 2rem;
+}
 
 @media screen and (min-width: 768px) {
   .main__container {

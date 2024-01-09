@@ -3,6 +3,7 @@ import CreateTodo from "./components/CreateTodo";
 import Todos from "./components/Todos";
 import Header from "./components/Header";
 import "./App.css";
+import TaskContext from "./contextAPI/TaskContext";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -19,11 +20,13 @@ function App() {
 
   return (
     <>
-      <Header />
-      <div className="main__container">
-        <CreateTodo todos={todos} setTodos={setTodos} />
-        <Todos todos={todos} setTodos={setTodos} />
-      </div>
+      <TaskContext value={{ todos, setTodos }}>
+        <Header />
+        <div className="main__container">
+          <CreateTodo todos={todos} setTodos={setTodos} />
+          <Todos todos={todos} setTodos={setTodos} />
+        </div>
+      </TaskContext>
     </>
   );
 }

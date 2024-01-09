@@ -28,25 +28,6 @@ const CreateTodo = (props) => {
 
   return (
     <>
-      {/* <input
-        type="text"
-        name=""
-        id=""
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.currentTarget.value)}
-      />
-      <input
-        type="text"
-        name=""
-        id=""
-        placeholder="Description"
-        value={description}
-        onChange={(e) => setDescription(e.currentTarget.value)}
-      />
-
-      <button onClick={handleAddTodo}>Add</button> */}
-
       <section className="createTodo">
         <div className="createTodo__profile">
           <img src={avatar} alt="" className="createTodo__profileImage" />
@@ -71,6 +52,8 @@ const CreateTodo = (props) => {
               id=""
               placeholder="Task Title"
               className="createTodo__addTask__input"
+              value={title}
+              onChange={(e) => setTitle(e.currentTarget.value)}
             />
           </fieldset>
 
@@ -94,10 +77,17 @@ const CreateTodo = (props) => {
             <textarea
               placeholder="Type here..."
               className="createTodo__addTask__input"
+              value={description}
+              onChange={(e) => setDescription(e.currentTarget.value)}
             ></textarea>
           </fieldset>
 
-          <button className="createTodo__addTask__addTodoBtn">Create</button>
+          <button
+            className="createTodo__addTask__addTodoBtn"
+            onClick={handleAddTodo}
+          >
+            Create
+          </button>
         </div>
       </section>
     </>
