@@ -1,4 +1,5 @@
 import { useState } from "react";
+import avatar from "../assets/profile_sample.png";
 
 const CreateTodo = (props) => {
   const { todos, setTodos } = props;
@@ -27,7 +28,7 @@ const CreateTodo = (props) => {
 
   return (
     <>
-      <input
+      {/* <input
         type="text"
         name=""
         id=""
@@ -44,7 +45,61 @@ const CreateTodo = (props) => {
         onChange={(e) => setDescription(e.currentTarget.value)}
       />
 
-      <button onClick={handleAddTodo}>Add</button>
+      <button onClick={handleAddTodo}>Add</button> */}
+
+      <section className="createTodo">
+        <div className="createTodo__profile">
+          <img src={avatar} alt="" className="createTodo__profileImage" />
+          <div className="createTodo__profileName">Lorem Ipsum</div>
+          <div className="createTodo__profileUsername">
+            Loremipsum@gmail.com
+          </div>
+        </div>
+
+        {/* Add task */}
+
+        <div className="createTodo__addTask">
+          <div className="createTodo__addTask__title">Add new task</div>
+
+          <fieldset className="createTodo__addTask__fieldset">
+            <legend className="createTodo__addTask__fieldset__legend">
+              Task Title
+            </legend>
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Task Title"
+              className="createTodo__addTask__input"
+            />
+          </fieldset>
+
+          <fieldset className="createTodo__addTask__fieldset">
+            <legend className="createTodo__addTask__fieldset__legend">
+              Due Date
+            </legend>
+            <input
+              type="date"
+              name=""
+              id=""
+              placeholder="Task Title"
+              className="createTodo__addTask__input"
+            />
+          </fieldset>
+
+          <fieldset className="createTodo__addTask__fieldset">
+            <legend className="createTodo__addTask__fieldset__legend">
+              Description
+            </legend>
+            <textarea
+              placeholder="Type here..."
+              className="createTodo__addTask__input"
+            ></textarea>
+          </fieldset>
+
+          <button className="createTodo__addTask__addTodoBtn">Create</button>
+        </div>
+      </section>
     </>
   );
 };

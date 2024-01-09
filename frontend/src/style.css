@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: red; */
+  padding: 0.5rem 4rem;
+  align-items: center;
+  border-bottom: 2px solid rgb(228, 228, 228);
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+.header__addButton {
+  background-color: #30a925;
+  padding: 1rem;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
